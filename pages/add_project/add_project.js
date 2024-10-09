@@ -16,6 +16,17 @@ Page({
     createGroupChat: true
   },
 
+  onLoad: function() {
+    // 初始化云开发环境
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+    } else {
+      wx.cloud.init({
+        traceUser: true,
+      });
+    }
+  },
+
   // 更新输入框数据
   handleInputChange(e) {
     const field = e.currentTarget.dataset.field;
@@ -68,33 +79,83 @@ Page({
     this.setData({ [field]: e.detail.value });
   },
 
-   // 保存草稿
-   handleSaveDraft() {
-    console.log('保存草稿按钮被点击');
-    wx.showToast({
-      title: '草稿已保存',
-      icon: 'success'
+  // 保存草稿
+  handleSaveDraft() {
+    const projectData = this._getProjectData();
+
+    wx.cloud.database().collection('projects').add({
+      data: {
+        ...projectData,
+        status: 'draft',  // 草稿状态
+        createTime: new Date(),
+      },
+      success: res => {
+        wx.showToast({
+          title: '草稿已保存',
+          icon: 'success'
+        });
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/shouye/shouye'
+          });
+        }, 1500);
+      },
+      fail: err => {
+        console.error('保存草稿失败：', err);
+        wx.showToast({
+          title: '保存草稿失败',
+          icon: 'none'
+        });
+      }
     });
-    setTimeout(() => {
-      console.log('跳转到首页');
-      wx.switchTab({
-        url: '/pages/shouye/shouye'
-      });
-    }, 1500);
   },
 
   // 发布项目
   handlePublishProject() {
-    console.log('发布项目按钮被点击');
-    wx.showToast({
-      title: '项目已发布',
-      icon: 'success'
+    const projectData = this._getProjectData();
+
+    wx.cloud.database().collection('projects').add({
+      data: {
+        ...projectData,
+        status: 'published',  // 已发布状态
+        createTime: new Date(),
+      },
+      success: res => {
+        wx.showToast({
+          title: '项目已发布',
+          icon: 'success'
+        });
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/shouye/shouye'
+          });
+        }, 1500);
+      },
+      fail: err => {
+        console.error('发布项目失败：', err);
+        wx.showToast({
+          title: '发布项目失败',
+          icon: 'none'
+        });
+      }
     });
-    setTimeout(() => {
-      console.log('跳转到首页');
-      wx.switchTab({
-        url: '/pages/shouye/shouye'
-      });
-    }, 1500);
+  },
+
+  // 获取表单中的项目信息
+  _getProjectData() {
+    const { projectName, projectMembers, instructor, skills, projectType, deadline, description, allowOutsiders, createGroupChat } = this.data;
+    const selectedSkills = skills.filter(skill => skill.checked).map(skill => skill.name);
+    
+    return {
+      projectName,
+      projectMembers: parseInt(projectMembers, 10),
+      instructor,
+      skills: selectedSkills,
+      projectType,
+      deadline,
+      description,
+      allowOutsiders,
+      createGroupChat
+    };
   }
 });
