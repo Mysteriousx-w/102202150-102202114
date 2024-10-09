@@ -11,7 +11,12 @@
     "pages/add_project/add_project",
     "pages/createdproject/createdproject",
     "pages/joinedproject/joinedproject",
-    "pages/project_message/project_message"
+    "pages/project_message/project_message",
+    "pages/project_detail/project_detail",
+    "pages/teammanage/teammanage",
+    "pages/chat/chat",
+    "pages/manage_project/manage_project"
+    
     
   ],
   "window": {
