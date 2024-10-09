@@ -57,6 +57,12 @@ Page({
       url: '/pages/all_projects/all_projects'
     });
   },
+
+  onViewAllProjectdetail(){
+    wx.navigateTo({
+      url: '/pages/project_detail/project_detail'
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

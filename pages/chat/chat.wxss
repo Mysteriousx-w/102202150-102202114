@@ -1,3 +1,4 @@
+/* pages/chat/chat.wxss */
 .chat-container {
   display: flex;
   flex-direction: column;

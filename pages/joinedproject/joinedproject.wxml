@@ -14,10 +14,10 @@
     </view>
     <view class="buttons">
       <button class="share-button" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{!item.isEnded}}">分享项目</button>
-      <button class="discuss-button" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{!item.isEnded}}">参与讨论</button>
+      <button class="discuss-button"  style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{!item.isEnded}}" bindtap="onmanage_project" >项目主页</button>
       <button class="exit-button" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{!item.isEnded}}">退出项目</button>
       <button class="gray-button" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{item.isEnded}}">分享项目</button>
-      <button class="gray-button" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{item.isEnded}}">参与讨论</button>
+      <button class="gray-button" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{item.isEnded}}">项目主页</button>
       <button class="gray-button" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" wx:if="{{item.isEnded}}">退出项目</button>
     </view>
   </view>

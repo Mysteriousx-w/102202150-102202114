@@ -37,6 +37,11 @@ Page({
   onLoad() {
     this.filterProjects('recruiting'); // 进入页面时默认显示 '招募中' 项目
   },
+  onViewAllProjectdetail(){
+    wx.navigateTo({
+      url: '/pages/project_detail/project_detail'
+    });
+  },
 
   // 根据筛选条件过滤项目
   filterProjects(filter) {

@@ -1,3 +1,4 @@
+/* pages/project_detail/project_detail.wxss */
 /* General container */
 .container {
   padding: 16px;

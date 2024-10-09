@@ -13,11 +13,11 @@
       <view class="project-team">{{item.teamSize}}</view>
     </view>
     <view class="buttons">
-      <button class="manage-button" wx:if="{{!item.isEnded}}" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">管理成员</button>
-      <button class="update-button" wx:if="{{!item.isEnded}}" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">更新进展</button>
+      <button class="manage-button" wx:if="{{!item.isEnded}}" bindtap="onViewAllteammanage" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">管理成员</button>
+      <button class="update-button" wx:if="{{!item.isEnded}}" bindtap="onmanage_project" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">项目主页</button>
       <button class="edit-button" wx:if="{{!item.isEnded}}" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">修改项目</button>
       <button class="gray-button" wx:if="{{item.isEnded}}" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">管理成员</button>
-      <button class="gray-button" wx:if="{{item.isEnded}}" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">更新进展</button>
+      <button class="gray-button" wx:if="{{item.isEnded}}" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">项目主页</button>
       <button class="gray-button" wx:if="{{item.isEnded}}" style="width: 173rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">修改项目</button>
     </view>
   </view>

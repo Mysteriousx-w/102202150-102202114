@@ -43,7 +43,7 @@ Page({
     // 判断是否是 clipboard 图标
     if (icon === 'clipboard') {
       wx.navigateTo({
-        url: '/pages/project_management/project_management'  // 这里指定要跳转的页面
+        url: '/pages/project_message/project_message'  // 这里指定要跳转的页面
       });
     } else {
       wx.showToast({

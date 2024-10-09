@@ -48,6 +48,11 @@ Page({
       url: '/pages/search/search'
     });
   },
+  onViewAllProjectdetail(){
+    wx.navigateTo({
+      url: '/pages/project_detail/project_detail'
+    });
+  },
   
 
   onFilterChange(e) {

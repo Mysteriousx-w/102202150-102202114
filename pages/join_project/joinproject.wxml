@@ -15,7 +15,7 @@
   <view class="project-list">
     <block wx:for="{{filteredProjects}}" wx:key="id">
       <view class="project-item">
-        <image class="project-image" src="{{item.image}}"></image>
+        <image class="project-image" bindtap="onViewAllProjectdetail" src="{{item.image}}"></image>
         <view class="project-info">
           <text class="project-title">{{item.title}}</text>
             <text class="project-tag"  style="position: relative; left: -135rpx; top: 53rpx">{{item.tap}}</text>

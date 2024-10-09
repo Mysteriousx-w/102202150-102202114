@@ -69,6 +69,12 @@ Page({
     });
   },
 
+  onchat(){
+    wx.navigateTo({
+      url: '/pages/chat/chat'
+    });
+  },
+
   // 添加会议日程
   addMeeting: function() {
     const newMeeting = { date: this.data.selectedDate };

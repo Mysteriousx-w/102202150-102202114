@@ -1,3 +1,4 @@
+/* pages/teammanage/teammanage.wxss */
 /* General layout */
 .container {
   padding: 16px;

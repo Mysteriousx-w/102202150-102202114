@@ -1,6 +1,6 @@
 <view class="container">
   <!-- 聊天框 -->
-  <view class="chat-box">
+  <view class="chat-box" bindtap="onchat" >
     <image class="chat-avatar" src="https://mp-34a5d4ee-1705-4d90-aebc-3458b73c8f4f.cdn.bspapp.com/images/mine/new/图片 1 Copy 3@1x.png"></image>
     <view class="chat-content">
       <view class="chat-header">

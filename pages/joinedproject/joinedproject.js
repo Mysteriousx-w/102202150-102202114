@@ -32,6 +32,12 @@ Page({
     });
   },
 
+  onmanage_project(){
+    wx.navigateTo({
+      url: '/pages/manage_project/manage_project'
+    });
+  },
+
   // 保留切换到“我加入的项目”功能，防止误触
   switchToJoined() {
     console.log('当前已在“我加入的项目”页面');

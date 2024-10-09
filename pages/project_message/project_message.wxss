@@ -43,12 +43,14 @@
   text-overflow: ellipsis;   
   display: inline-block;      
   width: 100%;  
+  font-size: 28rpx;
 }
 
 /* 按钮样式 */
 .action-button {
   border-radius: 30rpx;
   padding: 10rpx 30rpx;
+  font-size: 32rpx;
 }
 
 .accepted {
