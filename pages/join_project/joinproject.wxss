@@ -1,3 +1,4 @@
+/* pages/all_projects/all_projects.wxss */
 .container {
   padding: 16px;
   background-color: #f5f5f5;
@@ -88,6 +89,12 @@
 .project-tag {
   font-size: 24rpx;
   color: #1aad19;
+  white-space: nowrap;        
+  display: inline-block;      
+  width: 100%;  
+  overflow: hidden;         
+  text-overflow: ellipsis;   
+  display: inline-block;  
 }
 
 .project-description {
@@ -116,4 +123,3 @@
 .completed {
   color: #999;
 }
-

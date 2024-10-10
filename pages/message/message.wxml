@@ -7,8 +7,8 @@
           data-icon="{{item.icon}}" 
           data-label="{{item.label}}" 
           style="width: 243rpx; display: block; box-sizing: border-box">
-      <image style="position: relative; left: 70rpx; top: 21rpx" src="{{item.userAvatar}}" class="tab-icon"/>
-      <text style="position: relative; left: -20rpx; top: 44rpx">{{item.label}}</text>
+      <image style="position: relative; left: 6rpx; top: 20rpx" src="{{item.userAvatar}}" class="tab-icon"/>
+      <text class="label"  style="position: relative; left: 6rpx; top: 20rpx">{{item.label}}</text>
     </view>
   </block>
 </view>
