@@ -4,16 +4,20 @@
 ### 1.目录说明
 
 ```
+```
 D:.
 └─102202150-102202114-main
+    |  add_project.test.js  //增加项目的测试文件
     │  app.js  // 小程序的全局逻辑文件，管理应用生命周期和全局数据
     │  app.json  // 小程序的全局配置文件，定义页面路径、导航栏等
     │  app.wxss  // 小程序的全局样式文件，所有页面继承的样式
     │  project.config.json  // 项目的配置文件，用于微信开发工具的编译和调试
     │  project.private.config.json  // 私有配置文件，保存项目的私有信息
-    │  README.md  // 项目说明文档，通常包含项目介绍、使用说明等
+    |  shouye.test.js  //首页的测试文件
+    │  README.md  // 项目说明文档，包含项目介绍、使用说明等
     │  sitemap.json  // 小程序页面的爬虫信息配置
     │  sourcemap.zip  // 源代码映射文件，用于调试和错误追踪,可以不解压
+    |  task_manager.test.js  //项目主页的测试文件
     │
     ├─images
     │      shouye.png  // 首页图标资源
@@ -122,6 +126,8 @@ D:.
                 teammanage.json  // 团队成员管理页面的配置文件
                 teammanage.wxml  // 团队成员管理页面的结构文件
                 teammanage.wxss  // 团队成员管理页面的样式文件
+
+```
 
 ```
 ### 2.使用说明
