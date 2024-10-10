@@ -13,7 +13,8 @@ Page({
     deadline: '',
     description: '',
     allowOutsiders: true,
-    createGroupChat: true
+    createGroupChat: true,
+    defaultImageUrl: 'https://mp-34a5d4ee-1705-4d90-aebc-3458b73c8f4f.cdn.bspapp.com/images/mine/add_project/Copy 1@1x.png'  // 默认图片 URL
   },
 
   onLoad: function() {
@@ -83,6 +84,7 @@ Page({
   handleSaveDraft() {
     const projectData = this._getProjectData();
 
+    // 保存到 projects 数据库（草稿）
     wx.cloud.database().collection('projects').add({
       data: {
         ...projectData,
@@ -90,6 +92,7 @@ Page({
         createTime: new Date(),
       },
       success: res => {
+        this._addToAllProjects(projectData);  // 同时写入 all_projects 数据库
         wx.showToast({
           title: '草稿已保存',
           icon: 'success'
@@ -114,6 +117,7 @@ Page({
   handlePublishProject() {
     const projectData = this._getProjectData();
 
+    // 保存到 projects 数据库（已发布）
     wx.cloud.database().collection('projects').add({
       data: {
         ...projectData,
@@ -121,6 +125,7 @@ Page({
         createTime: new Date(),
       },
       success: res => {
+        this._addToAllProjects(projectData);  // 同时写入 all_projects 数据库
         wx.showToast({
           title: '项目已发布',
           icon: 'success'
@@ -137,6 +142,25 @@ Page({
           title: '发布项目失败',
           icon: 'none'
         });
+      }
+    });
+  },
+
+  // 将项目信息同时写入 all_projects 数据库，状态为 "招募中"
+  _addToAllProjects(projectData) {
+    wx.cloud.database().collection('all_projects').add({
+      data: {
+        ...projectData,
+        status: '招募中',  // 状态设为 "招募中"
+        statusClass:'recruiting',
+        imageURL: this.data.defaultImageUrl,  // 使用默认图片 URL
+        createTime: new Date(),
+      },
+      success: res => {
+        console.log('项目已写入 all_projects 数据库');
+      },
+      fail: err => {
+        console.error('写入 all_projects 失败：', err);
       }
     });
   },

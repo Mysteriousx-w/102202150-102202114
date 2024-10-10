@@ -15,15 +15,14 @@
   <view class="project-list">
     <block wx:for="{{filteredProjects}}" wx:key="id">
       <view class="project-item">
-        <image class="project-image" bindtap="onViewAllProjectdetail" src="{{item.image}}"></image>
+        <image class="project-image" src="{{item.imageURL}}"></image> <!-- 图片 -->
         <view class="project-info">
-          <text class="project-title">{{item.title}}</text>
-            <text class="project-tag"  style="position: relative; left: -135rpx; top: 53rpx">{{item.tap}}</text>
-            <text class="project-description"  style="position: relative; left: 3rpx; top: 70rpx">{{item.description}}</text>
+          <text class="project-title">{{item.projectName}}</text> <!-- 项目名称 -->
+          <text class="project-tag" style="position: relative; left: 0rpx; top: 21rpx">{{item.projectType}}</text> <!-- 项目类型 -->
+          <text class="project-description" style="position: relative; left: 0rpx; top: 44rpx">{{item.description}}</text> <!-- 项目描述 -->
         </view>
-        <view class="project-status {{item.statusClass}}" style="height: 37rpx; display: block; box-sizing: border-box; position: relative; left: 1rpx; top: 44rpx">{{item.status}}</view>
+        <view class="project-status {{item.statusClass}}">{{item.status}}</view> <!-- 项目状态 -->
       </view>
     </block>
   </view>
-  
 </view>
