@@ -3,7 +3,7 @@ const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia0
 
 Page({
   data: {
-    motto: '欢迎使用智汇联创',
+    
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: '',

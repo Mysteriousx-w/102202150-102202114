@@ -1,7 +1,7 @@
 /* 页面整体容器 */
 .container {
   padding: 16rpx;
-  background-color: #f8f8f8;
+  background-color:white;
   height: 100%;
 }
 

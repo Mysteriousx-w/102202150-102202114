@@ -13,6 +13,12 @@ Page({
     this.getProjectsFromDatabase();
   },
 
+  onViewAllProjectdetail(){
+    wx.navigateTo({
+      url: '/pages/project_detail/project_detail'
+    });
+  },
+
   // 从云数据库获取项目信息
   getProjectsFromDatabase() {
     const db = wx.cloud.database();

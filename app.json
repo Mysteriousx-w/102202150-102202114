@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/shouye/shouye",
     "pages/mine/mine",
     "pages/message/message",
@@ -15,13 +13,14 @@
     "pages/project_detail/project_detail",
     "pages/teammanage/teammanage",
     "pages/chat/chat",
-    "pages/manage_project/manage_project"
-    
+    "pages/manage_project/manage_project",
+    "pages/logs/logs",
+    "pages/index/index"
     
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "智汇联创",
+    "navigationBarTitleText": "ProjectPartner",
     "navigationBarBackgroundColor": "#ffffff"
   },
 

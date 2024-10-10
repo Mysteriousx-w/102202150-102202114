@@ -26,6 +26,11 @@
 .selected {
   background-color: #0081ff;
   color: white;
+  white-space: nowrap;        
+  overflow: hidden;         
+  text-overflow: ellipsis;   
+  display: inline-block;      
+  width: 100%;  
 }
 
 /* 项目卡片样式 */

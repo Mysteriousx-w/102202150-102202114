@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 个人信息区域 -->
   <view class="profile-section" style="width: 708rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
-    <image class="avatar" src="{{userInfo.avatar}}" />
+    <image class="avatar" src="{{userInfo.avatar}}" bindtap="onindex" />
     <view class="profile-info">
       <view class="nickname">{{userInfo.nickname}}</view>
       <view class="description">{{userInfo.description}}</view>
